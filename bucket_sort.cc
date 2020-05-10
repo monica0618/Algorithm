@@ -12,11 +12,11 @@ void insertion_sort (vector<int>& arr){
   for(int i = 1; i < arr.size(); i++){
     int key = arr[i];
     int j = i - 1;
-    while(j >= 0 && j >= key){
+    while(j >= 0 && arr[j] > key){
       arr[j+1]= arr[j];
       j--;
     }
-    arr[j] = key;
+    arr[j+1] = key;
   }
 }
 
@@ -48,6 +48,6 @@ void bucket_sort(vector<int>& a, int n){
 int main() {
   vector<int> arr{300, 437, 498, 504, 809, 760, 263, 983, 183, 245};
   bucket_sort(arr,3);
-  for(int a:arr) cout << a << ", ";
+  for(int a:arr) cout << a << " ";
   return 0;
 }
